@@ -1,0 +1,17 @@
+version: '3'
+services:
+  my-ubuntu-container:
+    image: ubuntu
+    container_name: ubuntu-container
+    command: tail -f /dev/null
+    networks:
+      - my-network
+    volumes:
+      - ./server:/server
+
+networks:
+  my-network:
+    driver: bridge
+
+volumes:
+  my-data-volume:
